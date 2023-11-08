@@ -10,8 +10,6 @@ public class Bola : MonoBehaviour
     private Rigidbody2D bolaRigidBody;
     private bool estaEnMovimiento = false;
 
-    private float multiplicadorVelocidad = 1.05f;
-
     private void Start()
     {
         /*
