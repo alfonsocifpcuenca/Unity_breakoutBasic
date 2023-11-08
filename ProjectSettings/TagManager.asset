@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Pala
   - Bola
+  - ZonaMuerte
+  - Ladrillo
   layers:
   - Default
   - TransparentFX
