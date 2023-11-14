@@ -32,13 +32,16 @@ public class GameManager : MonoBehaviour
         /*
          * Para cada uno de los ladrillos elegidos, asociamos el potenciador correspondiente
          * */
-        foreach (var ladrilloAlAzar in ladrillosAlAzar)
+        for (int i = 0; i < ladrillosAlAzar.Count; i++) 
         {
             GameObject miPotenciador = new GameObject();
-            var ladrilloScript = ladrilloAlAzar.GetComponent<Ladrillo>();
+            miPotenciador.name = $"Potenciador_{i + 1}";
+            var ladrilloScript = ladrillosAlAzar[i].GetComponent<Ladrillo>();
             ladrilloScript.Potenciador = miPotenciador;
         }
     }
+
+    public int Vidas { get { return this.vidasDelJugador; } }
 
     public bool EstaVivo()
     {
@@ -48,5 +51,15 @@ public class GameManager : MonoBehaviour
     public void QuitarVida()
     {
         this.vidasDelJugador = this.vidasDelJugador - 1;
+    }
+
+    public void RompemosLadrillo()
+    {
+        this.ladrillosRotos = this.ladrillosRotos + 1;
+    }
+
+    public bool HemosRotoTodosLosLadrillos()
+    {
+        return (this.ladrillosRotos >= this.ladrillosDelNivel.Count);
     }
 }

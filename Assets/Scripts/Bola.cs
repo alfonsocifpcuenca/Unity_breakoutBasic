@@ -9,6 +9,9 @@ public class Bola : MonoBehaviour
 
     private Rigidbody2D bolaRigidBody;
     private bool estaEnMovimiento = false;
+    
+    [SerializeField]
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -162,16 +165,43 @@ public class Bola : MonoBehaviour
                  * Vector2.Cla
                  * */
                 this.bolaRigidBody.velocity = Vector2.ClampMagnitude(this.bolaRigidBody.velocity, 10f);
+
+                /*
+                 * Aumentamos el número de ladrillos que llevamos rotos
+                 * en la pantalla
+                 * */
+                this.gameManager.RompemosLadrillo();
+
+                /* 
+                 * Comprobamos si tenemos que pasar de nivel
+                 * */
+                if (this.gameManager.HemosRotoTodosLosLadrillos())
+                {
+                    Debug.Log("Tenemos que pasar de Nivel");
+                }
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        /*
+         * Comprobamos si hemos tocado con la ZonaMuerte y quitamos una vida
+         * */
         if (collision.CompareTag("ZonaMuerte"))
         {
-            Debug.Log("Perdemos vida");
+            gameManager.QuitarVida();
             this.ReseteamosLaPosicion();
+            Debug.Log($"Nos quedan {gameManager.Vidas}");
+
+            /*
+             * Comprobamos si está vivo, y si no está vivo mostramos
+             * por consola que hemos muerto.
+             * */
+            if (gameManager.EstaVivo() == false)
+            {
+                Debug.Log($"Hemos muerto");
+            }
         }
     }
 
