@@ -10,8 +10,25 @@ public class Pala : MonoBehaviour
     [SerializeField]
     private float limiteDerecha;
 
+    [SerializeField]
+    private GameManager gameManager;
+
     void Update()
     {
+        MovimientoPala();
+    }
+
+    private void MovimientoPala()
+    {
+        /*
+         * Comprobamos si el jugador está muerto, si es así no
+         * permitimos mover la pala
+         * */
+        if (this.gameManager.EstaMuerto())
+        {
+            return;
+        }
+
         /*
          * Vamos a obtener la dirección de movimiento, con Input.GetAxisRaw obtendre
          * -1 si se está pulsando la flecha izquierda

@@ -8,7 +8,14 @@ public class Bola : MonoBehaviour
     private Vector2 velocidadInicial;
 
     private Rigidbody2D bolaRigidBody;
-    private bool estaEnMovimiento = false;    
+    private bool estaEnMovimiento = false;
+
+    /*
+     * Atributo que tendrá la referencia al script GameManager 
+     * del GameObject GameManager
+     * */
+    [SerializeField]
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -26,6 +33,15 @@ public class Bola : MonoBehaviour
 
     private void LanzamientoBola()
     {
+        /*
+         * Comprobamos si el jugador está muerto, si es así no
+         * permitimos mover la bola
+         * */
+        if (this.gameManager.EstaMuerto())
+        {
+            return;
+        }
+
         /*
          * Si pulsamos el espacio y la bola está parada (estaEnMovimiento = false)
          * entonces lanzamos la bola con la velocidad inicial
@@ -162,6 +178,11 @@ public class Bola : MonoBehaviour
                  * Vector2.Cla
                  * */
                 this.bolaRigidBody.velocity = Vector2.ClampMagnitude(this.bolaRigidBody.velocity, 10f);
+
+                /*
+                 * Al romper el ladrillo tenemos que sumar los puntos al marcador
+                 * */
+                this.gameManager.SumarPuntos(ladrilloScript.PuntosQueDa);
             }
         }
     }
@@ -173,7 +194,14 @@ public class Bola : MonoBehaviour
          * */
         if (collision.CompareTag("ZonaMuerte"))
         {
+            this.gameManager.RestarVida();
             this.ReseteamosLaPosicion();
+
+            if (gameManager.EstaMuerto())
+            {
+                // TODO Lógica para mostrar GameOver en pantalla
+                Debug.Log("GAME OVER");
+            }
         }
     }
 
