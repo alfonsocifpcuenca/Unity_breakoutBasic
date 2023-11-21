@@ -167,6 +167,18 @@ public class Bola : MonoBehaviour
                 Destroy(collision.gameObject);
 
                 /*
+                 * Comprobamos si el ladrillo tiene potenciador y si lo tiene
+                 * aplicamos su lógica
+                 * */
+                if (ladrilloScript.Potenciador != null)
+                {
+                    var script = ladrilloScript.Potenciador.GetComponent<Potenciador>();
+
+                    var miPotenciador = this.pala.AddComponent(script.GetType());
+                    ((Potenciador)miPotenciador).Aplicar();
+                }
+                
+                /*
                  * Si hemos roto el ladrillo aumentamos la velocidad de la bola
                  * multiplicando su velocidad actual por un incremento del 2%, es decir
                  * por cada ladrillo la bola irá un 2% más rápido

@@ -7,10 +7,12 @@ public class Ladrillo : MonoBehaviour
 
     private int puntosQueDa;
 
+    public int PuntosQueDa { get { return this.puntosQueDa; } }
+
+    public GameObject Potenciador;
+
     private void Start()
     {
         this.puntosQueDa = 25 * this.GolpesQueAguanta;
     }
-
-    public int PuntosQueDa { get { return this.puntosQueDa; } }
 }

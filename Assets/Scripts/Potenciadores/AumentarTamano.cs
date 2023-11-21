@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AumentarTamano : MonoBehaviour
+public class AumentarTamano : Potenciador
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private Vector3 escalaPala;
+
+    private void OnDestroy()
     {
-        
+        this.transform.localScale = this.escalaPala;   
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Aplicar()
     {
-        
+        this.escalaPala = this.transform.localScale;
+
+        this.transform.localScale = new Vector3(this.transform.localScale.x * 1.5f, this.transform.localScale.y, this.transform.localScale.z);
+        Destroy(this, 10);
     }
 }

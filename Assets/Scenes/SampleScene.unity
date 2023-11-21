@@ -151,7 +151,7 @@ Transform:
   m_GameObject: {fileID: 155855491}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5001304, y: 3.20008, z: 0}
+  m_LocalPosition: {x: -0.55, y: -0.68, z: 0}
   m_LocalScale: {x: 1, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &155855494
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -495,6 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &252936767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -639,6 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &282628255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -783,6 +786,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &285922104
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -927,6 +931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &308674604
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1164,6 +1169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &327217644
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1271,6 +1277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346232076}
   - component: {fileID: 346232075}
+  - component: {fileID: 346232077}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1293,6 +1300,8 @@ MonoBehaviour:
   vidas: 3
   puntos: 0
   ladrillosRotos: 0
+  potenciadores:
+  - {fileID: 1706954274}
 --- !u!4 &346232076
 Transform:
   m_ObjectHideFlags: 0
@@ -1308,6 +1317,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &346232077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346232074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcba6986d71ea0f43805ca8aa488d455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escalaPala: {x: 0, y: 0, z: 0}
 --- !u!1 &371231955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &371231958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1499,6 +1522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &425097031
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1643,6 +1667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &450824975
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2027,6 +2052,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &545550700
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2171,6 +2197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &611441265
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2315,6 +2342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &614998728
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2459,6 +2487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &666727787
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2603,6 +2632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &673292824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2747,6 +2777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &713533636
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2984,6 +3015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &729449331
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3128,6 +3160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &732795187
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3272,6 +3305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &778107143
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3416,6 +3450,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &811012246
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3560,6 +3595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &939340720
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3704,6 +3740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &947512521
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3852,7 +3889,6 @@ Transform:
   - {fileID: 252936765}
   - {fileID: 1215344148}
   - {fileID: 1694209101}
-  - {fileID: 673292822}
   - {fileID: 732795185}
   - {fileID: 1625922002}
   - {fileID: 666727785}
@@ -3874,6 +3910,7 @@ Transform:
   - {fileID: 1109418884}
   - {fileID: 939340718}
   - {fileID: 155855492}
+  - {fileID: 673292822}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109418883
@@ -3923,6 +3960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1109418886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4067,6 +4105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1131515279
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4211,6 +4250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &1179503162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4355,6 +4395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &1215344150
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4499,6 +4540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1234233824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4677,6 +4719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1278894078
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4821,6 +4864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1315353257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4965,6 +5009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &1318492648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5109,6 +5154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1369822594
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5383,6 +5429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1527999288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5527,6 +5574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1542203168
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5671,6 +5719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1557271547
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5815,6 +5864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1561024194
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5959,6 +6009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1596662851
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6056,6 +6107,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1608788946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1608788947}
+  m_Layer: 0
+  m_Name: Potenciadores
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1608788947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608788946}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0816957, y: 0.33272356, z: 2.5869236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1706954275}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614062488
 GameObject:
   m_ObjectHideFlags: 0
@@ -6171,6 +6254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1625922004
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6315,6 +6399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1635609803
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6459,6 +6544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 2
+  Potenciador: {fileID: 0}
 --- !u!212 &1694209103
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6649,6 +6735,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694854534}
   m_CullTransparentMesh: 1
+--- !u!1 &1706954274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706954275}
+  - component: {fileID: 1706954276}
+  m_Layer: 0
+  m_Name: AumentarTamano
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706954275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706954274}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1608788947}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1706954276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706954274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcba6986d71ea0f43805ca8aa488d455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escalaPala: {x: 0, y: 0, z: 0}
 --- !u!1 &1788070477
 GameObject:
   m_ObjectHideFlags: 0
@@ -6696,6 +6827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1788070480
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6840,6 +6972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1827786536
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6984,6 +7117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1855234922
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7128,6 +7262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &1860855105
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7402,6 +7537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &2032734980
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7840,6 +7976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GolpesQueAguanta: 1
+  Potenciador: {fileID: 0}
 --- !u!212 &2141598019
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7949,3 +8086,4 @@ SceneRoots:
   - {fileID: 346232076}
   - {fileID: 234562197}
   - {fileID: 1614062491}
+  - {fileID: 1608788947}

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -41,9 +42,18 @@ public class GameManager : MonoBehaviour
      * */
     public int LadrillosRotos { get { return ladrillosRotos; } }
 
+    private List<GameObject> ladrillosEnPantalla = new List<GameObject>();
+
+    [SerializeField]
+    private List<GameObject> potenciadores;
+
     private void Awake()
     {
+        ladrillosEnPantalla = new List<GameObject>(GameObject.FindGameObjectsWithTag("Ladrillo"));
+        Debug.Log($"Hay {this.ladrillosEnPantalla.Count} ladrillos en la pantalla");
 
+        // TODO Repartimos los potenciadores aleatoriamente de la lista de potenciadores
+        ladrillosEnPantalla[0].GetComponent<Ladrillo>().Potenciador = this.potenciadores[0];
     }
 
     /*
