@@ -8,24 +8,29 @@ public class AumentarVida : Potenciador
         try
         {
             /*
-             * Buscamos el GameManajer entre los objects de la escena
-             * */
+                * Buscamos el GameManajer entre los objects de la escena
+                * */
             var gameManager = GameObject.FindGameObjectWithTag("GameManager");
 
             if (gameManager != null)
             {
                 /*
-                 * Buscamos el script GameManager entre los componentes del GameObject
-                 * GameManager
-                 * */
+                    * Buscamos el script GameManager entre los componentes del GameObject
+                    * GameManager
+                    * */
                 var gameManagerScript = gameManager.GetComponent<GameManager>();
 
                 /*
-                 * Aumentamos la vida del jugador a través del GameManager
-                 * */
+                    * Aumentamos la vida del jugador a través del GameManager
+                    * */
                 gameManagerScript?.AumentarVida();
+
+                /*
+                    * Destruimos el objeto y liberamos memoria
+                    * */
+                Destroy(this.gameObject);
             }
-            
+
         }
         catch (Exception ex)
         {
