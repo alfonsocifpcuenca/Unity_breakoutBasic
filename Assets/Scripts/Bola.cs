@@ -148,6 +148,9 @@ public class Bola : MonoBehaviour
              * */
             if (ladrilloScript.GolpesQueAguanta <= 0)
             {
+                if (ladrilloScript.MiPotenciador != null)
+                    ladrilloScript.MiPotenciador.GetComponent<Potenciador>().Aplicar();
+
                 Destroy(collision.gameObject);
 
                 /*

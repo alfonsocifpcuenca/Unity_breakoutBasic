@@ -8,6 +8,7 @@ TagManager:
   - Bola
   - ZonaMuerte
   - Ladrillo
+  - GameManager
   layers:
   - Default
   - TransparentFX

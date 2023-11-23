@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class AumentarTamano : MonoBehaviour
+public class AumentarTamano : Potenciador
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public override void Aplicar()
     {
-        
+        GameObject pala = GameObject.FindGameObjectWithTag("Pala");
+
+        pala.transform.localScale = new Vector3(pala.transform.localScale.x * 2, pala.transform.localScale.y, pala.transform.localScale.z);
+        Destroy(this, 5f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    onde
 }
