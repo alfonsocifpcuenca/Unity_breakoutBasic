@@ -3,11 +3,6 @@ using UnityEngine;
 
 public class AumentarVida : Potenciador
 {
-
-    public AumentarVida() {
-        Debug.Log("Instanciamos aumentarvida");
-    }
-    
     public override void Aplicar()
     {
         try
@@ -19,5 +14,10 @@ public class AumentarVida : Potenciador
         {
             Debug.LogException(ex);
         }
+    }
+
+    private void Awake()
+    {
+        Debug.Log("Cosas raras");
     }
 }

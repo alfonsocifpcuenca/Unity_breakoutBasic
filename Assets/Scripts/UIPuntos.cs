@@ -12,9 +12,4 @@ public class UIPuntos : MonoBehaviour
     {
         this.cuadroDeTexto = this.gameObject.GetComponent<Text>();
     }
-
-    void Update()
-    {
-        this.cuadroDeTexto.text = $"Puntos: {this.gameManager.Puntos}";
-    }
 }

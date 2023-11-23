@@ -34,15 +34,6 @@ public class Bola : MonoBehaviour
     private void LanzamientoBola()
     {
         /*
-         * Comprobamos si el jugador está muerto, si es así no
-         * permitimos mover la bola
-         * */
-        if (this.gameManager.EstaMuerto())
-        {
-            return;
-        }
-
-        /*
          * Si pulsamos el espacio y la bola está parada (estaEnMovimiento = false)
          * entonces lanzamos la bola con la velocidad inicial
          * */
@@ -164,23 +155,26 @@ public class Bola : MonoBehaviour
              * */
             if (ladrilloScript.GolpesQueAguanta <= 0)
             {
-                if (ladrilloScript.MiPotenciador != null)
-                    ladrilloScript.MiPotenciador.GetComponent<Potenciador>().Aplicar();
-
-                Destroy(collision.gameObject);
+                /*
+                 * Aumentamos el número de ladrillos rotos del GameManager
+                 * */
+                this.gameManager.RompemosLadrillo();
 
                 /*
-                 * Comprobamos si el ladrillo tiene potenciador y si lo tiene
-                 * aplicamos su lógica
+                 * Al romper el ladrillo comprobamos si tiene potenciador. Si tiene 
+                 * potenciador llamamos al método Aplicar, y que ejecute la lógica
+                 * correspondiente en función del tipo de potenciador que sea.
+                 * En este punto de la aplicación el potenciador que sea nos da igual, lo 
+                 * importante es ejecutar el método Aplicar
                  * */
                 if (ladrilloScript.Potenciador != null)
-                {
-                    var script = ladrilloScript.Potenciador.GetComponent<Potenciador>();
+                    ladrilloScript.Potenciador.GetComponent<Potenciador>().Aplicar();
 
-                    var miPotenciador = this.pala.AddComponent(script.GetType());
-                    ((Potenciador)miPotenciador).Aplicar();
-                }
-                
+                /*
+                 * Destruimos el ladrillo
+                 * */
+                Destroy(collision.gameObject);
+                                
                 /*
                  * Si hemos roto el ladrillo aumentamos la velocidad de la bola
                  * multiplicando su velocidad actual por un incremento del 2%, es decir
@@ -193,11 +187,6 @@ public class Bola : MonoBehaviour
                  * Vector2.Cla
                  * */
                 this.bolaRigidBody.velocity = Vector2.ClampMagnitude(this.bolaRigidBody.velocity, 10f);
-
-                /*
-                 * Al romper el ladrillo tenemos que sumar los puntos al marcador
-                 * */
-                this.gameManager.SumarPuntos(ladrilloScript.PuntosQueDa);
             }
         }
     }
@@ -211,12 +200,6 @@ public class Bola : MonoBehaviour
         {
             this.gameManager.RestarVida();
             this.ReseteamosLaPosicion();
-
-            if (gameManager.EstaMuerto())
-            {
-                // TODO Lógica para mostrar GameOver en pantalla
-                Debug.Log("GAME OVER");
-            }
         }
     }
 

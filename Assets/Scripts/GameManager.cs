@@ -43,27 +43,38 @@ public class GameManager : MonoBehaviour
      * rotos desde cualquier punto de la aplicación (UI, Consola...)
      * */
     public int LadrillosRotos { get { return ladrillosRotos; } }
+
     private void Awake()
     {
+        /*
+         * Obtenemos los ladrillos que hay en la escena y los metemos en
+         * una lista de GameObjects
+         * */
         List<GameObject> LadrillosEnEscena = GameObject.FindGameObjectsWithTag("Ladrillo")
             .ToList();
 
+        /*
+         * De la lista de ladrillos, cogemos aleatoriamente (OrderBy...Random.value)
+         * 10 para asociarles un potenciador a esos ladrillos
+         * */
         List<GameObject> LadrillosConPotenciador = LadrillosEnEscena
             .OrderBy(x => Random.value)
-            .Take(44)
+            .Take(10)
             .ToList();
 
-        foreach(GameObject ladrillo in LadrillosConPotenciador)
-    {
+        /*
+         * Recorremos la lista de ladrillos con potenciador y le asociamos un 
+         * potenciador en particular
+         * */
+        foreach (GameObject ladrillo in LadrillosConPotenciador)
+        {
             var ladrilloScript = ladrillo.GetComponent<Ladrillo>();
-            //ladrilloScript.Potenciador = new AumentarVida();
-
-            var miGameObject = new GameObject();
-            miGameObject.AddComponent<AumentarTamano>();
-            ladrilloScript.MiPotenciador = miGameObject;
+            var gameObjectTemporal = new GameObject();
+            gameObjectTemporal.AddComponent<AumentarTamano>();
+            ladrilloScript.Potenciador = gameObjectTemporal;
+        }
     }
 
-        Debug.Log($"Hay {LadrillosEnEscena.Count} ladrillos en la escena.");
     /*
      * Método público para restar una vida
      * */
@@ -73,36 +84,20 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Vidas: {this.vidas}");
     }
 
-    public void RompemosLadrillo()
     /*
-     * Método que devolverá si el jugador está muerto (vidas = 0)
-     * o si tiene vidas aún
+     * Método público para aumentar el contador de ladrillos rotos
      * */
-    public bool EstaMuerto()
+    public void RompemosLadrillo()
     {
         this.ladrillosRotos++;
-        if (this.vidas == 0)
-            return true;
-        else
-            return false;
     }
 
     /*
-     * Método público para sumar puntos en el marcador
-     * del jugador
+     * Método para aumentar las vidas del jugador que se llamará
+     * cuando coja un Potenciador
      * */
-    public void SumarPuntos(int puntos)
     public void AumentarVida()
     {
-        /*
-         * Sumamos los puntos que nos haya dado el ladrillo roto
-         * */
-        this.puntos = this.puntos + puntos;
-
-        /*
-         * Aumentamos el nº de ladrillos que hemos roto
-         * */
-        this.ladrillosRotos = this.ladrillosRotos + 1;
         this.vidas++;
     }
 }

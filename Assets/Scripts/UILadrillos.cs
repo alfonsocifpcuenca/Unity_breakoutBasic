@@ -12,9 +12,4 @@ public class UILadrillos : MonoBehaviour
     {
         this.cuadroDeTexto = this.gameObject.GetComponent<Text>();
     }
-
-    void Update()
-    {
-        this.cuadroDeTexto.text = $"Ladrillos: {this.gameManager.LadrillosRotos}";
-    }
 }

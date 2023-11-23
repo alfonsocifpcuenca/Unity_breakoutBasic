@@ -21,15 +21,6 @@ public class Pala : MonoBehaviour
     private void MovimientoPala()
     {
         /*
-         * Comprobamos si el jugador está muerto, si es así no
-         * permitimos mover la pala
-         * */
-        if (this.gameManager.EstaMuerto())
-        {
-            return;
-        }
-
-        /*
          * Vamos a obtener la dirección de movimiento, con Input.GetAxisRaw obtendre
          * -1 si se está pulsando la flecha izquierda
          * 0 si no se está pulsando nada

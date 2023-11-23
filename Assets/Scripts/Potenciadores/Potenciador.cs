@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public class Potenciador : MonoBehaviour
-    {
-    public virtual void Aplicar() { }
-    }
+public abstract class Potenciador : MonoBehaviour
+{
+    public abstract void Aplicar();
+}
 
